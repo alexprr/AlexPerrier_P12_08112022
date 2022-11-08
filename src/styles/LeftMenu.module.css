@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 120px;
+    margin: 0;
+    background: #020203;
+}
+
+.activities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px 0;
+    padding: 6px;
+}
+
+.activities a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.copyright {
+    width: 200px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #fff;
+    transform: rotate(-90deg);
+}

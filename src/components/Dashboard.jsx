@@ -1,8 +1,13 @@
-import { TopMenu } from './'
+import { TopMenu, LeftMenu } from './'
 
 const Dashboard = () => {
   return (
-    <TopMenu />
+    <div>
+      <TopMenu />
+      <div style={{ display: 'flex', height: '90vh'}}>
+        <LeftMenu />
+      </div>
+    </div>
   )
 }
 
