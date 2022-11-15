@@ -27,6 +27,11 @@ const Dashboard = () => {
         <LeftMenu />
         <div className={style.user_content}>
             <Header id={id} userInfos={userInfos}/>
+          <section className={style.user_charts}>
+            <div className={style.user_charts_nutrients}>
+              <Nutrients id={id} keyData={keyData}/>
+            </div>
+          </section>
         </div>
       </div>
     </div>
