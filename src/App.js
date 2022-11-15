@@ -1,11 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import { Dashboard } from "./components";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" exact element={<Dashboard />} />
+      <Route exact path="/" element={<Navigate to="/user/12" />} />
+      <Route path="/user/:id" element={<Dashboard />} />
     </Routes>
   </BrowserRouter>
 );

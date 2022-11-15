@@ -1,0 +1,12 @@
+.main_content {
+    display: flex;
+    height: 90vh;
+}
+
+.user_content {
+    padding: 60px 90px;
+}
+
+.user_charts {
+    display: flex;
+}
