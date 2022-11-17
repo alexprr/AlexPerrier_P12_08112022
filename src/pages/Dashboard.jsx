@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { TopMenu, LeftMenu, Header, DailyActivity, Nutrients } from '../components'
+import { TopMenu, LeftMenu, Header, DailyActivity, Nutrients, AverageSession } from '../components'
 
 import style from '../styles/Dashboard.module.css'
 
@@ -30,6 +30,7 @@ const Dashboard = () => {
           <section className={style.user_charts}>
             <div className={style.user_charts_cards}>
               <DailyActivity id={id} />
+              <AverageSession id={id} />
             </div>
             <div className={style.user_charts_nutrients}>
               <Nutrients id={id} keyData={keyData}/>

@@ -21,3 +21,34 @@ export const NUTRIENTS_ICON = {
     img: `${Lipids}`,
   },
 };
+
+export const formattedSessions = [
+  {
+    day: "L",
+    sessionLength: 0,
+  },
+  {
+    day: "M",
+    sessionLength: 0,
+  },
+  {
+    day: "M",
+    sessionLength: 0,
+  },
+  {
+    day: "J",
+    sessionLength: 0,
+  },
+  {
+    day: "V",
+    sessionLength: 0,
+  },
+  {
+    day: "S",
+    sessionLength: 0,
+  },
+  {
+    day: "D",
+    sessionLength: 0,
+  },
+];
