@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   const userInfos = Object.values(data).map(user => user.userInfos)
   const keyData = Object.values(data).map(user => user.keyData)
-
+  
   return (
     <div>
       <TopMenu />
@@ -28,6 +28,9 @@ const Dashboard = () => {
         <div className={style.user_content}>
             <Header id={id} userInfos={userInfos}/>
           <section className={style.user_charts}>
+            <div className={style.user_charts_cards}>
+              <DailyActivity id={id} />
+            </div>
             <div className={style.user_charts_nutrients}>
               <Nutrients id={id} keyData={keyData}/>
             </div>

@@ -1,0 +1,49 @@
+.dailyActivityContainer {
+    width: 835px;
+    height: 200px;
+    margin: 30px 0 0 0;
+    padding: 30px 0 10px 30px;
+    position: relative;
+    background: #FBFBFB; 
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+}
+
+.dailyActivityTitle {
+    position: absolute;
+    margin: 0;
+    top: 24px;
+    left: 32px;
+    font-size: 15px;
+}
+
+.dailyActivityLegend {
+    position: absolute;
+    display: flex;
+    top: 24px;
+    right: 32px;
+}
+
+.dailyActivityLegend .legend {
+    margin: 0 0 0 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #74798C;
+}
+
+.legend .legendBullet {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.dark {
+    background: #282D30;
+}
+
+.red {
+    background: #E60000;
+}
+
