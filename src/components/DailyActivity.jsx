@@ -88,7 +88,7 @@ const DailyActivity = ({id}) => {
                 />
                 <Tooltip content={<CustomTooltip />}/>
                 <Bar
-                  minPointSize={50}
+                  minPointSize={10}
                   maxBarSize={8}
                   yAxisId='kg'
                   dataKey="kilogram" 

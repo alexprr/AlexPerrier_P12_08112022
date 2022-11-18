@@ -3,7 +3,7 @@ import Proteins from "../assets/icons/chicken.svg";
 import Glucids from "../assets/icons/apple.svg";
 import Lipids from "../assets/icons/cheeseburger.svg";
 
-export const NUTRIENTS_ICON = {
+const NUTRIENTS_ICON = {
   calories: {
     background: "#FBEAEA",
     img: `${Calories}`,
@@ -22,7 +22,7 @@ export const NUTRIENTS_ICON = {
   },
 };
 
-export const formattedSessions = [
+const FORMATTED_SESSIONS = [
   {
     day: "L",
     sessionLength: 0,
@@ -52,3 +52,14 @@ export const formattedSessions = [
     sessionLength: 0,
   },
 ];
+
+const PERFORMANCE_KIND = {
+  1: "Cardio",
+  2: "Énergie",
+  3: "Endurance",
+  4: "Force",
+  5: "Vitesse",
+  6: "Intensité",
+};
+
+export { NUTRIENTS_ICON, FORMATTED_SESSIONS, PERFORMANCE_KIND };

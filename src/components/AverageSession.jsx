@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../utils/fetchFromAPI';
 
-import { formattedSessions } from '../utils/constants'
+import { FORMATTED_SESSIONS } from '../utils/constants'
 import style from '../styles/AverageSession.module.css'
 
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Tooltip, Line } from 'recharts';
@@ -18,7 +18,7 @@ const AverageSession = ({ id }) => {
     const sessions = Object.values(data).map(user => user.sessions);
     
     const getFormattedData = (data) => {
-        let averageSessions = [...formattedSessions];
+        let averageSessions = [...FORMATTED_SESSIONS];
         
         for (let item of data) {
             for(let i in item) {

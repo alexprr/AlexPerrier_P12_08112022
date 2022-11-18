@@ -10,3 +10,9 @@
 .user_charts {
     display: flex;
 }
+
+.user_charts_cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

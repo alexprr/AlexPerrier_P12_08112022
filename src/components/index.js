@@ -5,3 +5,4 @@ export { default as DailyActivity } from "./DailyActivity";
 export { default as Nutrients } from "./Nutrients";
 export { default as NutrientCard } from "./NutrientCard";
 export { default as AverageSession } from "./AverageSession";
+export { default as UserPerformance } from "./UserPerformance";
