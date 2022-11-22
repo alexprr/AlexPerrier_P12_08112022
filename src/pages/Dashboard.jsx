@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { TopMenu, LeftMenu, Header, DailyActivity, Nutrients, AverageSession, UserPerformance } from '../components'
+import { 
+  TopMenu, 
+  LeftMenu, 
+  Header, 
+  DailyActivity, 
+  Nutrients, 
+  AverageSession, 
+  UserPerformance, 
+  UserScore } 
+  from '../components'
 
-import style from '../styles/Dashboard.module.css'
-
+  
 import { fetchFromAPI } from '../utils/fetchFromAPI'
+import style from '../styles/Dashboard.module.css'
 
 const Dashboard = () => {
   const { id } = useParams();
@@ -33,6 +42,7 @@ const Dashboard = () => {
               <div className={style.user_charts_cards}>
                 <AverageSession id={id} />
                 <UserPerformance id={id} />
+                <UserScore id={id} />
               </div>
             </div>
             <div className={style.user_charts_nutrients}>

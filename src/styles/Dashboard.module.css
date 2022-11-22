@@ -15,4 +15,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0 30px;
+}
+
+.user_charts_daily {
+    max-width: 1000px;
 }

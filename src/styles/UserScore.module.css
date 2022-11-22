@@ -1,0 +1,36 @@
+.userScoreContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 258px;
+    height: 263px;
+    margin: 30px 0;
+    padding: 1rem;
+    background: #FBFBFB;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+}
+
+.userScoreTitle {
+    position: absolute;
+    top: 16px;
+    left: 32px;
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #20253A;
+}
+
+.userScoreLabel {
+    position: absolute;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.userScoreValue {
+    font-size: 26px;
+    font-weight: 700;
+    color: #282D30;
+}
