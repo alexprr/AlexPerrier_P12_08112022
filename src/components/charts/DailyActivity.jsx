@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { fetchFromAPI } from '../utils/fetchFromAPI';
+import { fetchFromAPI } from '../../utils/fetchFromAPI';
 
-import style from '../styles/DailyActivity.module.css'
+import style from './DailyActivity.module.css'
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { fetchFromAPI } from '../utils/fetchFromAPI';
+import { fetchFromAPI } from '../../utils/fetchFromAPI';
 
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-import style from '../styles/UserScore.module.css'
+import style from './UserScore.module.css'
 
 const UserScore = ({ id }) => {
     const [data, setData] = useState([]);
@@ -38,8 +38,6 @@ const UserScore = ({ id }) => {
     }
 
     const userScore = getScore(userScoreData)
-    console.log(userScore);
-    
 
   return (
     <div className={style.userScoreContainer}>
@@ -76,7 +74,7 @@ const UserScore = ({ id }) => {
                 <br />
             </span> */}
             de votre <br />
-            score
+            objectif
         </p>
     </div>
   )

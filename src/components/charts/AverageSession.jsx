@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { fetchFromAPI } from '../utils/fetchFromAPI';
+import { fetchFromAPI } from '../../utils/fetchFromAPI';
 
-import { FORMATTED_SESSIONS } from '../utils/constants'
-import style from '../styles/AverageSession.module.css'
+import { FORMATTED_SESSIONS } from '../../utils/constants'
+import style from './AverageSession.module.css'
 
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Tooltip, Line } from 'recharts';
 

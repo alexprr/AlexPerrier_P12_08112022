@@ -1,6 +1,7 @@
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
 
-import style from '../styles/TopMenu.module.css'
+// eslint-disable-next-line
+import style from './TopMenu.module.css'
 
 const TopMenu = () => {
   return (

@@ -1,0 +1,15 @@
+.userPerformanceContainer {
+    width: 33%;
+    height: 100%;
+    padding: 1rem;
+
+    background: #282D30;
+    border-radius: 6px;
+}
+
+@media (max-width: 1380px) {
+    .userPerformanceContainer {
+        min-width: 150px;
+        min-height: 150px;
+    }
+}

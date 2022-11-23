@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { fetchFromAPI } from '../utils/fetchFromAPI';
+import { fetchFromAPI } from '../../utils/fetchFromAPI';
 
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-import { PERFORMANCE_KIND } from '../utils/constants';
+import { PERFORMANCE_KIND } from '../../utils/constants';
 
-import style from '../styles/UserPerformance.module.css'
+import style from './UserPerformance.module.css'
 
 const UserPerformance = ({ id }) => {
     const [data, setData] = useState([]);

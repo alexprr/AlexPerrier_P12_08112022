@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { 
   TopMenu, 
   LeftMenu, 
-  Header, 
+  Welcome, 
   DailyActivity, 
   Nutrients, 
   AverageSession, 
@@ -14,7 +14,7 @@ import {
 
   
 import { fetchFromAPI } from '../utils/fetchFromAPI'
-import style from '../styles/Dashboard.module.css'
+import dashboard from './Dashboard.module.css'
 
 const Dashboard = () => {
   const { id } = useParams();
@@ -32,23 +32,38 @@ const Dashboard = () => {
   return (
     <div>
       <TopMenu />
-      <div className={style.main_content}>
+      <div className={dashboard.main_content}>
         <LeftMenu />
-        <div className={style.user_content}>
-            <Header id={id} userInfos={userInfos}/>
-          <section className={style.user_charts}>
-            <div className={style.user_charts_daily}>
-              <DailyActivity id={id} />
-              <div className={style.user_charts_cards}>
+
+        {/* Main user content */}
+        <div className={dashboard.user_content}>
+          {/* Welcome message */}
+          <div className={dashboard.user_content_header}>
+            <Welcome id={id} userInfos={userInfos}/>
+          </div>
+
+          {/* Main infos */}
+          <section className={dashboard.user_infos}>
+
+            {/* User charts */}
+            <div className={dashboard.user_infos_charts}>
+              <div className={dashboard.user_charts_daily}>
+                <DailyActivity id={id} />
+              </div>
+              
+              <div className={dashboard.user_charts_cards}>
                 <AverageSession id={id} />
                 <UserPerformance id={id} />
                 <UserScore id={id} />
               </div>
             </div>
-            <div className={style.user_charts_nutrients}>
+
+            {/* User key data */}
+            <div className={dashboard.user_infos_keyData}>
               <Nutrients id={id} keyData={keyData}/>
             </div>
           </section>
+
         </div>
       </div>
     </div>

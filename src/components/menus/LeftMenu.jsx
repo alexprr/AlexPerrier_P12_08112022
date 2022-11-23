@@ -1,9 +1,9 @@
-import style from '../styles/LeftMenu.module.css'
+import style from './LeftMenu.module.css'
 
-import Relaxing from '../assets/activities/relaxing.svg'
-import Swimming from '../assets/activities/swimming.svg'
-import Biking from '../assets/activities/biking.svg'
-import Fitness from '../assets/activities/fitness.svg'
+import Relaxing from '../../assets/activities/relaxing.svg'
+import Swimming from '../../assets/activities/swimming.svg'
+import Biking from '../../assets/activities/biking.svg'
+import Fitness from '../../assets/activities/fitness.svg'
 
 const LeftMenu = () => {
   return (

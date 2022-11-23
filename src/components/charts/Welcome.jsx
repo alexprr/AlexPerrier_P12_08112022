@@ -10,7 +10,7 @@ const Congrats = styled.p`
   font-weight: 400;
 `
 
-const Header = ({id, userInfos}) => {
+const Welcome = ({id, userInfos}) => {
   const congratulations = `Félicitations ! Vous avez explosé vos objectifs hier 👏`;
   
   return (
@@ -25,4 +25,4 @@ const Header = ({id, userInfos}) => {
   )
 }
 
-export default Header
+export default Welcome

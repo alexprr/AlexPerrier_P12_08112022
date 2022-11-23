@@ -1,12 +1,14 @@
-import { NUTRIENTS_ICON } from '../utils/constants'
+import { NUTRIENTS_ICON } from '../../utils/constants'
 import NutrientCard from "./NutrientCard"
+
+import nutrient from './Nutrient.module.css'
 
 const Nutrients = ({id, keyData}) => {
   return (
-    <div>
+    <div className={nutrient.keyDataContainer}>
       {keyData &&
        keyData.map(user => (
-        <div key={id}>
+        <div className={nutrient.keyDataCardContainer} key={id}>
           <NutrientCard 
             count={user.calorieCount}
             unit='kCal'

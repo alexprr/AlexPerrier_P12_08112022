@@ -1,0 +1,61 @@
+.main_content {
+    display: flex;
+    height: 90vh;
+}
+
+.user_content {
+    display: flex;
+    flex-direction: column;
+    margin: 60px;
+}
+
+.user_infos {
+    display: flex;
+    margin: 0 auto;
+    gap: 0 30px;
+}
+
+.user_infos_charts {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 0 30px;
+}
+
+.user_infos_keyData {
+    width: 30%;
+    display: flex;
+}
+
+.user_charts_daily {
+    width: 100%;
+    height: 60%;
+ }
+
+.user_charts_cards {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
+    gap: 0 30px;
+} 
+
+@media (min-width: 1800px) {
+    .user_content {
+        margin: 60px auto;
+    }
+}
+
+@media (max-width: 1380px) {
+    .user_infos {
+        width: 900px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .user_infos {
+        width: 700px;
+    }
+}
