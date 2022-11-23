@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
+import PropTypes from 'prop-types'
 
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
@@ -63,6 +64,10 @@ const UserPerformance = ({ id }) => {
       </ResponsiveContainer>
     </div>
   )
+}
+
+UserPerformance.propTypes = {
+    id: PropTypes.string.isRequired
 }
 
 export default UserPerformance

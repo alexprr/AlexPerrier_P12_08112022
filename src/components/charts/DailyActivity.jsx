@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
+import PropTypes from 'prop-types'
 
 import style from './DailyActivity.module.css'
 
@@ -110,6 +111,10 @@ const DailyActivity = ({id}) => {
   )
 }
 
+DailyActivity.propTypes = {
+  id: PropTypes.string.isRequired
+}
+
 export default DailyActivity
 
 function CustomTooltip({ active, payload}) {
@@ -123,4 +128,9 @@ function CustomTooltip({ active, payload}) {
   }
 
   return null;
+}
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array
 }

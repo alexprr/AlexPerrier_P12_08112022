@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Title = styled.h1`
   margin: 0;
@@ -23,6 +24,11 @@ const Welcome = ({id, userInfos}) => {
         <Congrats>{congratulations}</Congrats>
     </div>
   )
+}
+
+Welcome.propTypes = {
+  id: PropTypes.string.isRequired,
+  userInfos: PropTypes.array
 }
 
 export default Welcome

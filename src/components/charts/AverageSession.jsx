@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
+import PropTypes from 'prop-types'
 
 import { FORMATTED_SESSIONS } from '../../utils/constants'
 import style from './AverageSession.module.css'
@@ -75,10 +76,19 @@ const AverageSession = ({ id }) => {
     )
 }
 
+AverageSession.propTypes = {
+    id: PropTypes.string.isRequired
+}
+
 export default AverageSession
 
 function CustomToolType({active, payload}) {
     if(active) {
         return <p className={style.averageSessionTooltipe}>{`${payload[0].value} min`}</p>
     }
+}
+
+CustomToolType.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
 }

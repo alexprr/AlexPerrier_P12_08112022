@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Card = styled.div`
   display: flex;
@@ -52,6 +53,14 @@ const NutrientCard = ({ unit, count, icon, color, nutrient }) => {
       </TextContainer>
     </Card>
   )
+}
+
+NutrientCard.propTypes = {
+  unit: PropTypes.string,
+  count: PropTypes.number,
+  icon: PropTypes.string,
+  color: PropTypes.string,
+  nutrient: PropTypes.string
 }
 
 export default NutrientCard

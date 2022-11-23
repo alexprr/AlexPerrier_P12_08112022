@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
+import PropTypes from 'prop-types'
 
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
@@ -78,6 +79,10 @@ const UserScore = ({ id }) => {
         </p>
     </div>
   )
+}
+
+UserScore.propTypes = {
+    id: PropTypes.string.isRequired
 }
 
 export default UserScore

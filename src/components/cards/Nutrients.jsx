@@ -1,7 +1,10 @@
-import { NUTRIENTS_ICON } from '../../utils/constants'
+import PropTypes from 'prop-types'
+
 import NutrientCard from "./NutrientCard"
 
+import { NUTRIENTS_ICON } from '../../utils/constants'
 import nutrient from './Nutrient.module.css'
+
 
 const Nutrients = ({id, keyData}) => {
   return (
@@ -41,6 +44,11 @@ const Nutrients = ({id, keyData}) => {
        ))}
     </div>
   )
+}
+
+Nutrients.propTypes = {
+  id: PropTypes.string.isRequired,
+  keyData: PropTypes.array.isRequired
 }
 
 export default Nutrients
