@@ -2,11 +2,18 @@ import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
 import PropTypes from 'prop-types'
 
+import FormatUserData from '../../utils/formatUserData';
+
 import style from './DailyActivity.module.css'
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-const DailyActivity = ({id}) => {
+/**
+ * 
+ * @param { string } id 
+ * @returns React Component : DailyActivity based on user id's.
+ */
+const DailyActivity = ({ id }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -17,27 +24,8 @@ const DailyActivity = ({id}) => {
 
   const sessions = Object.values(data).map(user => user.sessions);
 
-  const getFormattedData = (data) => {
-
-    const formattedData = []
-
-    for (let item of data) {
-      for(let i of item) {
-        // eslint-disable-next-line no-unused-vars
-        const [yyyy, mm, dd] = i.day.split("-");
-
-          formattedData.push({
-          day: `${dd}/${mm}`,
-          kilogram: i.kilogram,
-          calories: i.calories,
-        });
-      }
-    }
-
-    return formattedData;
-  }
-
-  const dailyActivity = getFormattedData(sessions);
+  // formatted array to use with BarChart data props
+  const dailyActivity = FormatUserData.getFormattedDate(sessions);
 
   return (
       <div className={style.dailyActivityContainer}>

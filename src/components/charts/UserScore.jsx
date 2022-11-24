@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
 import PropTypes from 'prop-types'
 
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import FormatUserData from '../../utils/formatUserData';
+
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
 import style from './UserScore.module.css'
 
@@ -25,43 +27,28 @@ const UserScore = ({ id }) => {
         return user.todayScore
     })
 
-    const getScore = (data) => {
-        let userScore = [];
-
-        for(let score of data) {
-            userScore.push({
-                todayScore: score,
-                fill: "#E60000",
-            });
-        }
-
-        return userScore;
-    }
-
-    const userScore = getScore(userScoreData)
+    // formatted array to use with RadialBarChart data props
+    const userScore = FormatUserData.getFormattedScoreData(userScoreData)
 
   return (
     <div className={style.userScoreContainer}>
         <h2 className={style.userScoreTitle}>Score</h2>
 
         <ResponsiveContainer width="100%" height="100%">
-            <PieChart width={200} height={200}>
-                <Pie 
-                data={userScore}
-                dataKey="todayScore"
-                innerRadius={70}
-                outerRadius={80}
-                startAngle={90}
-                >
-                    {userScore.map((entry, index) => (
-                        <Cell 
-                            key={`cell-${index}`}
-                            fill={entry.fill}
-                            cornerRadius='50%'
-                        />
-                    ))}
-                </Pie>
-            </PieChart>
+            <RadialBarChart  
+                innerRadius="80%" 
+                outerRadius="70%"
+                width={730} 
+                height={250}
+                barSize={15}
+                data={userScore}  
+            >
+                <RadialBar 
+                    minAngle={15}
+                    background={true}
+                    dataKey='todayScore'
+                />
+            </RadialBarChart>
         </ResponsiveContainer>
 
         <p className={style.userScoreLabel}>
@@ -70,10 +57,6 @@ const UserScore = ({ id }) => {
                     {user.todayScore * 100}% <br />
                 </span>
             ))}
-            {/* <span className={style.userScoreValue}>
-                {`${100* userScore[0].todayScore}%`}
-                <br />
-            </span> */}
             de votre <br />
             objectif
         </p>

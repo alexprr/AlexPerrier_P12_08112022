@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
 import PropTypes from 'prop-types'
 
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import FormatUserData from '../../utils/formatUserData';
 
-import { PERFORMANCE_KIND } from '../../utils/constants';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 import style from './UserPerformance.module.css'
 
@@ -18,23 +18,9 @@ const UserPerformance = ({ id }) => {
     }, [id])
 
     const performance = Object.values(data).map(user => user.data);
-   
-    const getPerformanceData = (data) => {
-        let performanceData = [];
 
-        for(let item of data) {
-            for(let i of item) {
-                performanceData.push({
-                    value: i.value,
-                    kind: PERFORMANCE_KIND[i.kind]
-                })
-            }
-        }
-
-        return performanceData;
-    }
-
-    const performanceData = getPerformanceData(performance)
+    // formatted array to use with RadarChart data props
+    const performanceData = FormatUserData.getFormattedPerformance(performance)
     
   return (
     <div className={style.userPerformanceContainer}>

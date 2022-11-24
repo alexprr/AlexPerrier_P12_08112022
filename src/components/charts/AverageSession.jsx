@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
 import PropTypes from 'prop-types'
 
-import { FORMATTED_SESSIONS } from '../../utils/constants'
+import FormatUserData from '../../utils/formatUserData';
+
 import style from './AverageSession.module.css'
 
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Tooltip, Line } from 'recharts';
@@ -16,21 +17,11 @@ const AverageSession = ({ id }) => {
         })
     }, [id])
 
+    // array based on the object response data
     const sessions = Object.values(data).map(user => user.sessions);
     
-    const getFormattedData = (data) => {
-        let averageSessions = [...FORMATTED_SESSIONS];
-        
-        for (let item of data) {
-            for(let i in item) {
-                averageSessions[i].sessionLength = item[i].sessionLength;
-            }
-        }
-    
-        return averageSessions;
-      }
-
-    const averageSession = getFormattedData(sessions);
+    // formatted array to use with LineChart data props
+    const averageSession = FormatUserData.getFormattedSessionsData(sessions);
 
     return (
         <div className={style.averageSessionContainer}>
