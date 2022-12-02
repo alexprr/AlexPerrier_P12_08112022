@@ -3,19 +3,31 @@ import { FORMATTED_SESSIONS, PERFORMANCE_KIND } from "./constants";
 export default class FormatUserData {
   /**
    *
+   * @param { object } data
+   * @returns user first name
+   */
+  static getUserFirstName(data) {
+    if (data) {
+      return data.userInfos.firstName;
+    }
+  }
+
+  /**
+   *
    * @param { array } data
    * @returns new array with letters instead of numbers for day property
    */
   static getFormattedSessionsData(data) {
     let averageSessions = [...FORMATTED_SESSIONS];
 
-    for (let item of data) {
-      for (let i in item) {
-        averageSessions[i].sessionLength = item[i].sessionLength;
+    if (data) {
+      for (let item in data.sessions) {
+        averageSessions[item].sessionLength = data.sessions[item].sessionLength;
       }
+      return averageSessions;
     }
 
-    return averageSessions;
+    return FORMATTED_SESSIONS;
   }
 
   /**
@@ -26,14 +38,24 @@ export default class FormatUserData {
   static getFormattedScoreData(data) {
     let userScore = [];
 
-    for (let score of data) {
-      userScore.push({
-        todayScore: score,
-        fill: "#E60000",
-      });
+    if (data) {
+      for (let score of data) {
+        userScore.push(
+          {
+            todayScore: 1 - score,
+            fill: "white",
+          },
+          {
+            todayScore: score,
+            fill: "#E60000",
+          }
+        );
+      }
+
+      return userScore;
     }
 
-    return userScore;
+    return this.getDefaultScore();
   }
 
   /**
@@ -41,23 +63,25 @@ export default class FormatUserData {
    * @param { array } data
    * @returns new array w/ formatted date : dd:mm
    */
-  static getFormattedDate(data) {
-    const formattedData = [];
+  static getFormattedDailyActivity(data) {
+    const formattedDailyActivity = [];
 
-    for (let item of data) {
-      for (let i of item) {
-        // eslint-disable-next-line no-unused-vars
-        const [yyyy, mm, dd] = i.day.split("-");
+    if (data) {
+      for (let item of data) {
+        for (let i of item) {
+          // eslint-disable-next-line no-unused-vars
+          const [yyyy, mm, dd] = i.day.split("-");
 
-        formattedData.push({
-          day: `${dd}/${mm}`,
-          kilogram: i.kilogram,
-          calories: i.calories,
-        });
+          formattedDailyActivity.push({
+            day: `${dd}/${mm}`,
+            kilogram: i.kilogram,
+            calories: i.calories,
+          });
+        }
       }
-    }
 
-    return formattedData;
+      return formattedDailyActivity;
+    }
   }
 
   /**
@@ -68,15 +92,17 @@ export default class FormatUserData {
   static getFormattedPerformance(data) {
     let performanceData = [];
 
-    for (let item of data) {
-      for (let i of item) {
-        performanceData.push({
-          value: i.value,
-          kind: PERFORMANCE_KIND[i.kind],
-        });
+    if (data) {
+      for (let item of data) {
+        for (let i of item) {
+          performanceData.push({
+            value: i.value,
+            kind: PERFORMANCE_KIND[i.kind],
+          });
+        }
       }
-    }
 
-    return performanceData;
+      return performanceData;
+    }
   }
 }

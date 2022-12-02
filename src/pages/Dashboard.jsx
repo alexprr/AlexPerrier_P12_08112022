@@ -26,7 +26,6 @@ const Dashboard = () => {
     })
   }, [id])
 
-  const userInfos = Object.values(data).map(user => user.userInfos)
   const keyData = Object.values(data).map(user => user.keyData)
   
   return (
@@ -39,7 +38,7 @@ const Dashboard = () => {
         <div className={dashboard.user_content}>
           {/* Welcome message */}
           <div className={dashboard.user_content_header}>
-            <Welcome id={id} userInfos={userInfos}/>
+            <Welcome id={id}/>
           </div>
 
           {/* Main infos */}
