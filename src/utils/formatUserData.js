@@ -68,16 +68,14 @@ export default class FormatUserData {
 
     if (data) {
       for (let item of data) {
-        for (let i of item) {
-          // eslint-disable-next-line no-unused-vars
-          const [yyyy, mm, dd] = i.day.split("-");
+        // eslint-disable-next-line no-unused-vars
+        const [yyyy, mm, dd] = item.day.split("-");
 
-          formattedDailyActivity.push({
-            day: `${dd}/${mm}`,
-            kilogram: i.kilogram,
-            calories: i.calories,
-          });
-        }
+        formattedDailyActivity.push({
+          day: `${dd}/${mm}`,
+          kilogram: item.kilogram,
+          calories: item.calories,
+        });
       }
 
       return formattedDailyActivity;

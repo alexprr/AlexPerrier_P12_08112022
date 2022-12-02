@@ -18,14 +18,14 @@ const DailyActivity = ({ id }) => {
 
   useEffect(() => {
     fetchFromAPI(`${id}/activity`).then((data) => {
-      setData(data)
+      setData(data.data)
     })
   }, [id])
 
-  const sessions = Object.values(data).map(user => user.sessions);
+  const sessions = data.sessions;
 
   // formatted array to use with BarChart data props
-  const dailyActivity = FormatUserData.getFormattedDate(sessions);
+  const dailyActivity = FormatUserData.getFormattedDailyActivity(sessions);
 
   return (
       <div className={style.dailyActivityContainer}>
@@ -108,9 +108,9 @@ export default DailyActivity
 function CustomTooltip({ active, payload}) {
   if(active) {
     return (
-      <div style={{ width: '39px', height: '69px', background:"#ec0000", textAlign: 'center', color: 'white', fontSize: '7px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', fill: 'transparent'}}>
-        <p>{payload[0].value}</p>
-        <p>{payload[1].value}</p>
+      <div style={{ width: '50px', height: '69px', background:"#ec0000", textAlign: 'center', color: 'white', fontSize: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-around', flexDirection: 'column', fill: 'transparent', borderRadius: 3}}>
+        <p className={style.calorieValue}>{payload[0].value} kCal</p>
+        <p className={style.kilogramValue}>{payload[1].value} kg</p>
       </div>
     )
   }
