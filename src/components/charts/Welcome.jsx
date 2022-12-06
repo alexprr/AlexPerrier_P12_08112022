@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { fetchFromAPI } from '../../utils/fetchFromAPI';
-import FormatUserData from '../../utils/formatUserData';
 
 const Title = styled.h1`
   margin: 0;
@@ -24,20 +23,19 @@ const Congrats = styled.p`
 `
 
 const Welcome = ({ id }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null)
+ 
+  useEffect(() => {
+    fetchFromAPI(`${id}`).then((data) => {
+        setData(data)
+    })
+  }, [id])
 
-    useEffect(() => {
-        fetchFromAPI(`${id}`).then((data) => {
-            setData(data)
-        })
-    }, [id])
-
-  const userFirstName = FormatUserData.getUserFirstName(data.data)
   const congratulations = `Félicitations ! Vous avez explosé vos objectifs hier 👏`;
 
   return (
     <div>
-        <Title key={id}>Bonjour <span style={{color: '#FF0101'}}>{userFirstName}</span></Title>
+        <Title>Bonjour <span style={{color: '#FF0101'}}>{data?.userInfos?.firstName}</span></Title>
         <Congrats>{congratulations}</Congrats>
     </div>
   )
