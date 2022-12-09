@@ -21,6 +21,21 @@ export default class FormatUserData {
 
   /**
    *
+   * @param { object } data
+   * @returns todayScore property
+   */
+  static userScoreData(data) {
+    if (data.todayScore) {
+      return data.todayScore;
+    } else {
+      data.todayScore = data.score;
+    }
+
+    return data.todayScore;
+  }
+
+  /**
+   *
    * @param { array } data
    * @returns new array with formatted user score
    */
@@ -28,23 +43,19 @@ export default class FormatUserData {
     let userScore = [];
 
     if (data) {
-      for (let score of data) {
-        userScore.push(
-          {
-            todayScore: 1 - score,
-            fill: "white",
-          },
-          {
-            todayScore: score,
-            fill: "#E60000",
-          }
-        );
-      }
-
-      return userScore;
+      userScore.push(
+        {
+          todayScore: this.userScoreData(data),
+          fill: "#E60000",
+        },
+        {
+          todayScore: 1 - this.userScoreData(data),
+          fill: "#FBFBFB",
+        }
+      );
     }
 
-    return this.getDefaultScore();
+    return userScore;
   }
 
   /**

@@ -17,18 +17,8 @@ const UserScore = ({ id }) => {
         })
     }, [id])
 
-    const userScoreData = Object.values(data).map(user => {
-        if(user.todayScore) {
-            return user.todayScore
-        } else {
-            user.todayScore = user.score
-        }
-
-        return user.todayScore
-    })
-
     // formatted array to use with RadialBarChart data props
-    const userScore = FormatUserData.getFormattedScoreData(userScoreData)
+    const userScore = FormatUserData.getFormattedScoreData(data)
 
   return (
     <div className={style.userScoreContainer}>
@@ -37,7 +27,7 @@ const UserScore = ({ id }) => {
         <ResponsiveContainer width="100%" height="100%">
             <RadialBarChart  
                 innerRadius="80%" 
-                outerRadius="70%"
+                outerRadius="60%"
                 width={730} 
                 height={250}
                 barSize={15}
@@ -52,11 +42,9 @@ const UserScore = ({ id }) => {
         </ResponsiveContainer>
 
         <p className={style.userScoreLabel}>
-            {userScore.map((user, index) => (
-                <span key={index} className={style.userScoreValue}>
-                    {user.todayScore * 100}% <br />
-                </span>
-            ))}
+            <span className={style.userScoreValue}>
+                {userScore[0].todayScore * 100}% <br />
+            </span>
             de votre <br />
             objectif
         </p>
