@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { 
@@ -12,21 +11,10 @@ import {
   UserScore } 
   from '../components'
 
-  
-import { fetchFromAPI } from '../utils/fetchFromAPI'
 import dashboard from './Dashboard.module.css'
 
 const Dashboard = () => {
   const { id } = useParams();
-  const [data, setData] = useState([])
-  
-  useEffect(() => {
-    fetchFromAPI(`${id}`).then((data) => {
-      setData(data)
-    })
-  }, [id])
-
-  const keyData = Object.values(data).map(user => user.keyData)
   
   return (
     <div>
@@ -38,7 +26,7 @@ const Dashboard = () => {
         <div className={dashboard.user_content}>
           {/* Welcome message */}
           <div className={dashboard.user_content_header}>
-            <Welcome id={id}/>
+            <Welcome id={id} />
           </div>
 
           {/* Main infos */}
@@ -59,7 +47,7 @@ const Dashboard = () => {
 
             {/* User key data */}
             <div className={dashboard.user_infos_keyData}>
-              <Nutrients id={id} keyData={keyData}/>
+              <Nutrients id={id} />
             </div>
           </section>
 
