@@ -54,12 +54,12 @@ const FORMATTED_SESSIONS = [
 ];
 
 const PERFORMANCE_KIND = {
-  1: "Cardio",
-  2: "Énergie",
-  3: "Endurance",
-  4: "Force",
-  5: "Vitesse",
-  6: "Intensité",
+  0: "Cardio",
+  1: "Énergie",
+  2: "Endurance",
+  3: "Force",
+  4: "Vitesse",
+  5: "Intensité",
 };
 
 export { NUTRIENTS_ICON, FORMATTED_SESSIONS, PERFORMANCE_KIND };

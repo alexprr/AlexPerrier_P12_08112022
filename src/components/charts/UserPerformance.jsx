@@ -17,10 +17,8 @@ const UserPerformance = ({ id }) => {
         })
     }, [id])
 
-    const performance = Object.values(data).map(user => user.data);
-
     // formatted array to use with RadarChart data props
-    const performanceData = FormatUserData.getFormattedPerformance(performance)
+    const performanceData = FormatUserData.getFormattedPerformance(data)
     
   return (
     <div className={style.userPerformanceContainer}>

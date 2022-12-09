@@ -3,17 +3,6 @@ import { FORMATTED_SESSIONS, PERFORMANCE_KIND } from "./constants";
 export default class FormatUserData {
   /**
    *
-   * @param { object } data
-   * @returns user first name
-   */
-  static getUserFirstName(data) {
-    if (data) {
-      return data.userInfos.firstName;
-    }
-  }
-
-  /**
-   *
    * @param { array } data
    * @returns new array with letters instead of numbers for day property
    */
@@ -91,13 +80,11 @@ export default class FormatUserData {
     let performanceData = [];
 
     if (data) {
-      for (let item of data) {
-        for (let i of item) {
-          performanceData.push({
-            value: i.value,
-            kind: PERFORMANCE_KIND[i.kind],
-          });
-        }
+      for (let item in data.data) {
+        performanceData.push({
+          value: data.data[item].value,
+          kind: PERFORMANCE_KIND[item],
+        });
       }
 
       return performanceData;
