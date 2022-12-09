@@ -26,21 +26,19 @@ export const fetchFromAPI = async (endpoint) => {
     } else {
       switch (URLdetail[1]) {
         case "activity":
-          output = { data: USER_ACTIVITY.find((u) => u.userId === userId) };
+          output = USER_ACTIVITY.find((u) => u.userId === userId);
           break;
         case "average-sessions":
-          output = {
-            data: USER_AVERAGE_SESSIONS.find((u) => u.userId === userId),
-          };
+          output = USER_AVERAGE_SESSIONS.find((u) => u.userId === userId);
           break;
         case "performance":
-          output = { data: USER_PERFORMANCE.find((u) => u.userId === userId) };
+          output = USER_PERFORMANCE.find((u) => u.userId === userId);
           break;
       }
     }
   } else {
     const { data } = await axios.get(`${CONFIG.API_BASE_URL}/user/${endpoint}`);
-    output = data;
+    output = data.data;
   }
 
   return output;
