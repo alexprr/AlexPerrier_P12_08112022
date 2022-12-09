@@ -101,4 +101,10 @@ export default class FormatUserData {
       return performanceData;
     }
   }
+
+  static getKeyData(data) {
+    if (data) {
+      return data.keyData;
+    }
+  }
 }

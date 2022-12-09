@@ -5,7 +5,7 @@ const Card = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  width: 258px;
+  width: 100%;
   height: 100%;
   background: #FBFBFB;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
@@ -41,15 +41,15 @@ const Nutrient = styled.p`
   color: #74798C;
 `
 
-const NutrientCard = ({ unit, count, icon, color, nutrient }) => {
+const NutrientCard = ({ unit, value, icon, color, nutrientType }) => {
   return (
     <Card>
       <Icon style={{background: color}}>
         <img src={icon} alt='icon'/>
       </Icon>
       <TextContainer>
-        <Count>{count}{unit}</Count>
-        <Nutrient>{nutrient}</Nutrient>
+        <Count>{value}{unit}</Count>
+        <Nutrient>{nutrientType}</Nutrient>
       </TextContainer>
     </Card>
   )
