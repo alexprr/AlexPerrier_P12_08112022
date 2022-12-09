@@ -6,6 +6,8 @@ import FormatUserData from '../../utils/formatUserData';
 
 import style from './DailyActivity.module.css'
 
+import { CONFIG } from '../../config';
+
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 /**
@@ -18,12 +20,12 @@ const DailyActivity = ({ id }) => {
 
   useEffect(() => {
     fetchFromAPI(`${id}/activity`).then((data) => {
-      setData(data.data)
+      setData(data)
     })
   }, [id])
 
   const sessions = data.sessions;
-
+  
   // formatted array to use with BarChart data props
   const dailyActivity = FormatUserData.getFormattedDailyActivity(sessions);
 

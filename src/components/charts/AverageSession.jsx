@@ -17,11 +17,8 @@ const AverageSession = ({ id }) => {
         })
     }, [id])
 
-    // array based on the object response data
-    const sessions = Object.values(data).map(user => user.sessions);
-    
     // formatted array to use with LineChart data props
-    const averageSession = FormatUserData.getFormattedSessionsData(sessions);
+    const averageSession = FormatUserData.getFormattedSessionsData(data);
 
     return (
         <div className={style.averageSessionContainer}>
