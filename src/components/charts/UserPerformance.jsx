@@ -31,11 +31,10 @@ const UserPerformance = ({ id }) => {
                 <PolarAngleAxis 
                     dataKey="kind"
                     dy={2}
-                    dx={-2}
                     stroke='#fff'
                     tickLine={false}
                     tick={{
-                        fontSize: 10,
+                        fontSize: 12,
                         fontWeight: 500,
                     }}
                 />

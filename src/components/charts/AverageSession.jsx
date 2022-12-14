@@ -28,7 +28,10 @@ const AverageSession = ({ id }) => {
            </h3>
 
            <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={averageSession}>
+            <LineChart 
+            data={averageSession}
+            margin={{ top: 30, right: 10, bottom: 10, left: 10 }}
+            >
                 <XAxis 
                     dataKey="day"
                     tickLine={false} 

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+import nutrient from './Nutrient.module.css'
+
 const Card = styled.div`
   display: flex;
   align-items: center;
@@ -10,6 +12,11 @@ const Card = styled.div`
   background: #FBFBFB;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
+
+  @media (max-width: 1300px) {
+    gap: 10px;
+    width: 70%
+  }
 `
 
 const Icon = styled.div`
@@ -20,6 +27,11 @@ const Icon = styled.div`
   justify-content: center;
   margin-left: 32px;
   border-radius: 6px;
+
+  @media (max-width: 1300px) {
+    width: 30px;
+    height: 30px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -32,6 +44,10 @@ const Count = styled.p`
   font-size: 20px;
   font-weight: 700;
   color: #282D30;
+
+  @media (max-width: 1300px) {
+    font-size: 14px;
+  }
 `
 
 const Nutrient = styled.p`
@@ -45,7 +61,7 @@ const NutrientCard = ({ unit, value, icon, color, nutrientType }) => {
   return (
     <Card>
       <Icon style={{background: color}}>
-        <img src={icon} alt='icon'/>
+        <img className={nutrient.icon_img} src={icon} alt='icon'/>
       </Icon>
       <TextContainer>
         <Count>{value}{unit}</Count>

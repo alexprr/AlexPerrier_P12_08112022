@@ -3,10 +3,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    /* width: 258px; */
-    width: 33%;
+    flex: 33%;
     height: 100%;
-    padding: 1rem;
     background: #FBFBFB;
     border-radius: 6px;
 }
@@ -34,11 +32,4 @@
     font-size: 26px;
     font-weight: 700;
     color: #282D30;
-}
-
-@media (max-width: 1380px) {
-    .userScoreContainer {
-        min-width: 150px;
-        min-height: 150px;
-    }
 }

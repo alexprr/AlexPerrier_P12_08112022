@@ -49,7 +49,7 @@ const DailyActivity = ({ id }) => {
                 barGap={8}
                 barCategoryGap="30%"
                 data={dailyActivity}
-                margin={{ top: 50, right: 0, bottom: 0, left: 0 }}
+                margin={{ top: 120, right: 0, bottom: 10, left: 40 }}
               >
                 <CartesianGrid
                   vertical={false}

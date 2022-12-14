@@ -34,3 +34,19 @@
     color: #fff;
     transform: rotate(-90deg);
 }
+
+@media (max-width: 1300px) {
+    .container {
+        width: 60px;
+    }
+
+    .activities a {
+        width: 42px;
+        height: 42px;
+    }
+
+    .activities_img {
+        width: 50%;
+        height: 50%;
+    }
+}

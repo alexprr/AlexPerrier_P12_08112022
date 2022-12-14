@@ -9,10 +9,10 @@ const LeftMenu = () => {
   return (
     <div className={style.container}>
         <div className={style.activities}>
-            <a href='/'><img src={Relaxing} /></a>
-            <a href='/'><img src={Swimming} /></a>
-            <a href='/'><img src={Biking} /></a>
-            <a href='/'><img src={Fitness} /></a>
+            <a href='/'><img src={Relaxing} className={style.activities_img}/></a>
+            <a href='/'><img src={Swimming} className={style.activities_img}/></a>
+            <a href='/'><img src={Biking} className={style.activities_img}/></a>
+            <a href='/'><img src={Fitness} className={style.activities_img}/></a>
         </div>
         <p className={style.copyright}>Copyright, SportSee 2020</p>
     </div>
