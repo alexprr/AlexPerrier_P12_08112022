@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SportSee
 
-## Available Scripts
+**Parcours Openclassrooms** : DA JavaScript / React
+**Code source du projet n°12** : Développez un tableau de bord analytics avec React
 
-In the project directory, you can run:
+Intégration réalisée à partir de la [maquette Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1&t=7i4uilW7wy8UIyF0-0)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prérequis
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. [NodeJS](https://nodejs.org/fr/)
+2. npm et/ou [yarn](https://yarnpkg.com/)
 
-### `npm test`
+### Installation du projet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cloner le repo git du projet SportSee
 
-### `npm run build`
+`git clone https:https://github.com/alexprr/AlexPerrier_P12_08112022.git`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Back-end (API)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Se déplacer dans le dossier /backend/ puis installer les dépendances avec :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm install`
 
-### `npm run eject`
+Lancer le back-end sur le port 3000 :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`npm run start` ou `yarn dev`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Front-end
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Se placer à la racine du projet /sportsee/ puis installer les dépendances avec :
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm install`
 
-## Learn More
+Lancer le front-end sur le port 3001 :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Consulter le front-end du projet à l'URL `http://localhost:3001`.
 
-### Code Splitting
+Vous serez automatiquement redirigé vers la page du premier user (id = 12).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+L'API ne fournit actuellement que des données pour deux users ayant pour id: 12 et 18
+Ex: `http://localhost:3001/user/12`
