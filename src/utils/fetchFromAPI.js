@@ -34,6 +34,8 @@ export const fetchFromAPI = async (endpoint) => {
         case "performance":
           output = USER_PERFORMANCE.find((u) => u.userId === userId);
           break;
+        default:
+          output = "Erreur de traitement, contactez le service technique";
       }
     }
   } else {
