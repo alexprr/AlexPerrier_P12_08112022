@@ -6,8 +6,6 @@ import FormatUserData from '../../utils/formatUserData';
 
 import style from './DailyActivity.module.css'
 
-import { CONFIG } from '../../config';
-
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 /**

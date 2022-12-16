@@ -78,20 +78,19 @@
         gap: 0 10px;
     }
 
+    .user_infos_charts {
+        flex: 60%;
+    }
+    
+    .user_infos_keyData {
+        flex: 40%;
+    }
+
     .user_charts_cards {
         max-height: 200px;
         gap: 0 10px;
     }
 }
-
-/* 50/50 space for graphs*/
-@media (max-width: 1600px) {
-    .user_infos_charts, 
-    .user_infos_keyData {
-        flex: 50%;
-    }
-}
-
 
 /* Larger screen sizes */
 @media (min-width: 1600px) {

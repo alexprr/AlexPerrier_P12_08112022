@@ -33,3 +33,17 @@
     font-weight: 700;
     color: #282D30;
 }
+
+@media (max-height: 900px) {
+    .userScoreLabel {
+        font-size: 12px;
+    }
+
+    .userScoreValue {
+        font-size: 16px;
+    }
+
+    .userScoreTitle {
+        top: 4px;
+    }
+}
